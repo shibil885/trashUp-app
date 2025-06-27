@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-back-button text="" slot="start"></ion-back-button>
+    <ion-title color="light">Pickup-call</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <img src="https://media.wired.com/photos/59269cd37034dc5f91bec0f1/3:4/w_640,c_limit/GoogleMapTA.jpg" alt="">
+  <ion-card>
+    <ion-card-content>
+      <p>Address: fake street,111</p>
+      <p>Complement: apto 222</p>
+      <p>Neighborhood: neighborhood</p>
+      <p>Zip code: 673637</p>
+      <p>Kondotty - Kerala</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item lines="inset">
+    <ion-input label="Note" type="text" labelPlacement="floating" ></ion-input>
+  </ion-item>
+
+  <ion-button color="success" size="full">Create pickup call</ion-button>
+</ion-content>
