@@ -1,0 +1,7 @@
+{
+  "name": "TrashUp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
