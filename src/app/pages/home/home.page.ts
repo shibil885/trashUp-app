@@ -12,21 +12,19 @@ import {
   IonItem,
   IonAvatar,
   IonLabel,
-  IonCard,
-  IonCardSubtitle,
-  IonCardHeader,
-  IonCardContent, IonButton, IonFab, IonFabButton } from '@ionic/angular/standalone';
+  IonFab,
+  IonFabButton, IonCardHeader, IonCardSubtitle, IonButton } from '@ionic/angular/standalone';
+import { PickupCallCardComponent } from 'src/app/components/pickup-call-card/pickup-call-card.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
   standalone: true,
-  imports: [IonFabButton, IonFab, IonButton, 
-    IonCardContent,
-    IonCardHeader,
-    IonCardSubtitle,
-    IonCard,
+  imports: [IonButton, IonCardSubtitle, IonCardHeader, 
+    IonFabButton,
+    IonFab,
     IonLabel,
     IonAvatar,
     IonItem,
@@ -37,12 +35,21 @@ import {
     IonTitle,
     IonToolbar,
     IonMenuButton,
+    PickupCallCardComponent,
     CommonModule,
     FormsModule,
   ],
 })
 export class HomePage implements OnInit {
-  constructor() {}
+  constructor(private _router: Router) {}
 
   ngOnInit() {}
+
+  goToPickupCalls() {
+    this._router.navigate(['pickup-calls'])
+  }
+
+  newPickupCall() {
+    this._router.navigate(['pickup-call'])
+  }
 }

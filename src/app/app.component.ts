@@ -28,10 +28,14 @@ import {
   bookmarkSharp,
   hourglassOutline,
   add,
+  checkmarkCircleOutline,
+  trophy,
 } from 'ionicons/icons';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
   imports: [
@@ -42,6 +46,7 @@ import {
     IonList,
     IonListHeader,
     IonNote,
+    LoadingComponent,
     IonMenuToggle,
     IonRouterOutlet,
   ],
@@ -66,7 +71,9 @@ export class AppComponent {
       bookmarkOutline,
       bookmarkSharp,
       hourglassOutline,
-      add
+      add,
+      checkmarkCircleOutline,
+      trophy,
     });
   }
 }

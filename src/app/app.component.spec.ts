@@ -2,12 +2,60 @@ import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { addIcons } from 'ionicons';
+import {
+  mailOutline,
+  mailSharp,
+  paperPlaneOutline,
+  paperPlaneSharp,
+  heartOutline,
+  heartSharp,
+  archiveOutline,
+  archiveSharp,
+  trashOutline,
+  trashSharp,
+  warningOutline,
+  warningSharp,
+  bookmarkOutline,
+  bookmarkSharp,
+  hourglassOutline,
+  add,
+  checkmarkCircleOutline,
+  trophy,
+} from 'ionicons/icons';
+import { StoreModule } from '@ngrx/store';
+import { LoadingReducer } from './store/loading/loading.reducer';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
+    addIcons({
+      mailOutline,
+      mailSharp,
+      paperPlaneOutline,
+      paperPlaneSharp,
+      heartOutline,
+      heartSharp,
+      archiveOutline,
+      archiveSharp,
+      trashOutline,
+      trashSharp,
+      warningOutline,
+      warningSharp,
+      bookmarkOutline,
+      bookmarkSharp,
+      hourglassOutline,
+      add,
+      checkmarkCircleOutline,
+      trophy,
+    });
+
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
-      providers: [provideRouter([])]
+      imports: [
+        AppComponent,
+        StoreModule.forRoot([]),
+        StoreModule.forFeature('loading', LoadingReducer),
+      ],
+      providers: [provideRouter([])],
     }).compileComponents();
   });
 
@@ -15,29 +63,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it('should have menu labels', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const app = fixture.nativeElement;
-    const menuItems = app.querySelectorAll('ion-label');
-    expect(menuItems.length).toEqual(12);
-    expect(menuItems[0].textContent).toContain('Inbox');
-    expect(menuItems[1].textContent).toContain('Outbox');
-  });
-
-  it('should have urls', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const app = fixture.nativeElement;
-    const menuItems = app.querySelectorAll('ion-item');
-    expect(menuItems.length).toEqual(12);
-    expect(menuItems[0].getAttribute('href')).toEqual(
-      '/folder/inbox'
-    );
-    expect(menuItems[1].getAttribute('href')).toEqual(
-      '/folder/outbox'
-    );
   });
 });

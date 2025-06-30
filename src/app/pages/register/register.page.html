@@ -1,6 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="success">
-    <ion-title>Register</ion-title>
+    <ion-back-button text="" slot="start" color="light"></ion-back-button>
+    <ion-title color="light">Register</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -92,6 +93,6 @@
   <!-- ------------------------- -->
   
   <!-- SUBMIT -->
-   <ion-button color="light" size="full">Register</ion-button>
+   <ion-button color="light" size="full" (click)="register()">Register</ion-button>
   <!-- ------------------------- -->
 </ion-content>
